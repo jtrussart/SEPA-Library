@@ -25,19 +25,7 @@ public class SepaQrCode {
 
     public String generateBase64Jpeg() {
 
-        var content =
-                """
-                BCD
-                002
-                1
-                SCT
-                                
-                %s
-                %s
-                %s%s
-                                
-                %s
-                """;
+        var content = "BCD\n002\n1\nSCT\n\n%s\n%s\n%s%s\n\n%s";
 
         var qrCodeStringValue = String.format(content, recipient, iban, currency, amount.toPlainString(), communication);
 
